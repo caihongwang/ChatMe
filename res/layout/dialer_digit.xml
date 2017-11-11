@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.csipsimple.ui.dialpad.DialerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_digit_dialer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/right_panel_margin_vertical"
+    android:paddingTop="@dimen/right_panel_margin_vertical" >
+
+    <RelativeLayout
+        android:id="@+id/topField"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="0dip"
+        android:layout_weight="@integer/dialpad_layout_weight_digits"
+        android:background="@drawable/dialpad_background"
+        android:orientation="horizontal"
+        android:padding="0dip" >
+
+        <!-- Dummy item to prevent DigitsEditText from receiving focus -->
+
+        <View
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <com.csipsimple.ui.dialpad.DigitsEditText
+            android:id="@+id/digitsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/accountChooserButton"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/description_digits_edittext"
+            android:gravity="center"
+            android:imeActionLabel="@string/call"
+            android:imeOptions="actionGo"
+            android:nextFocusRight="@+id/accountChooserButton"
+            android:textAppearance="@style/DialtactsDigitsTextAppearance"
+            android:textColor="@android:color/white" />
+
+        <com.csipsimple.widgets.AccountChooserButton
+            android:id="@+id/accountChooserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <!-- Autocomplete -->
+	<!-- 自动填充拨号记录List -->
+    <ListView
+        android:id="@+id/autoCompleteList"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"  
+        android:layout_weight="@integer/dialpad_layout_weight_autocomplete_list"
+        android:layout_gravity="center_horizontal"
+		android:paddingBottom="10dip"
+        android:visibility="gone" />
+
+    <!-- Keypad section -->
+	<!-- 数字键盘布局 -->
+    <include layout="@layout/dialpad_compose" />
+
+</com.csipsimple.ui.dialpad.DialerLayout>

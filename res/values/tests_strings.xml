@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="test_audio">音频测试</string><!-- Audio test -->
+    <string name="test_audio_prepare">准备音频测试…</string><!-- Preparing audio test… -->
+    <string name="test_audio_ongoing">测试正在进行中… \n请在麦克风边说话并使用耳麦听音</string><!-- Test ongoing… \nSpeak on mic and listen on earpiece -->
+    <string name="test_audio_network_failure">测试失败：\ n首先切换到有效的网络</string><!-- Test failed : \nSwitch to a valid network first -->
+
+</resources>
